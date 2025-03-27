@@ -19,9 +19,9 @@ export default function Home() {
             filter:"blur(0px)",
           }}
           transition={{duration:0.5, delay:0.1}}
-          className="text-4xl sm:text-6xl font-extrabold"
+          className="text-4xl sm:text-6xl font-extrabold text-purple-600"
         >
-          ImagiCrea
+          Imagi<span className="text-white">Crea</span>
         </motion.h1>
         <motion.p
         initial={{
@@ -34,7 +34,7 @@ export default function Home() {
           scale:1,
           filter:"blur(0px)",
         }}
-        transition={{duration:0.5, delay:0.35}} className="text-center text-white/50">
+        transition={{duration:0.5, delay:0.35}} className=" p-1 text-center text-white/50">
         Turn your text into images with our free AI-powered too
         </motion.p>
       </div>
