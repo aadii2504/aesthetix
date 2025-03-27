@@ -34,7 +34,7 @@ export default function Home() {
           scale:1,
           filter:"blur(0px)",
         }}
-        transition={{duration:0.5, delay:0.35}} className=" p-1 text-center text-white/50">
+        transition={{duration:0.5, delay:0.35}} className=" p-1 text-center text-white/50 ">
         Turn your text into images with our free AI-powered too
         </motion.p>
       </div>
