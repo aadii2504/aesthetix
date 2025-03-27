@@ -1,9 +1,11 @@
 "use client";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div className="w-full h-dvh flex justify-center items-center">
+      <BackgroundBeamsWithCollision>
       <div className="flex justify-center items-center flex-col">
         <motion.h1
           initial={{
@@ -19,7 +21,7 @@ export default function Home() {
           transition={{duration:0.5, delay:0.1}}
           className="text-4xl sm:text-6xl font-extrabold"
         >
-          Aesthetix
+          ImagiCrea
         </motion.h1>
         <motion.p
         initial={{
@@ -36,6 +38,7 @@ export default function Home() {
         Turn your text into images with our free AI-powered too
         </motion.p>
       </div>
+      </BackgroundBeamsWithCollision>
     </div>
   );
 }

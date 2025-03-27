@@ -15,25 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aesthetix",
+  title: "ImagiCrea",
   description:
-    "Aesthetix is your cutting-edge AI-powered image generation SaaS platform that brings creativity to life",
+    "ImagiCrea is your cutting-edge AI-powered image generation SaaS platform that brings creativity to life",
   metadataBase: new URL("https://Aesthetix.com"),
   openGraph: {
-    title: "Aesthetix - Free AI Image Generation",
+    title: "ImagiCrea - Free AI Image Generation",
     description: "Turn your text into images with our free AI-powered tool",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Aesthetix AI Image Generator",
+        alt: "ImagiCrea AI Image Generator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "StableMax - Free AI Image Generation",
+    title: "ImagiCrea - Free AI Image Generation",
     description: "Turn your text into images with our free AI-powered tool",
     images: ["/twitter-image.jpg"],
   },
