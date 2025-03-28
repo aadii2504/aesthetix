@@ -1,5 +1,6 @@
 "use client";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
         transition={{duration:0.5, delay:0.35}} className=" p-1 text-center text-white/50 ">
         Turn your text into images with our free AI-powered too
         </motion.p>
+        <Button className="mt-3 font-bold p-5">Start Creating</Button>
       </div>
       </BackgroundBeamsWithCollision>
     </div>
