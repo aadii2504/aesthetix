@@ -52,7 +52,7 @@ export default function Home() {
         }}
         transition={{duration:0.5, delay:0.55}}>
         <Link href="/create">
-        <Button className="mt-3 font-bold p-5">Start Creating</Button>
+        <Button className="mt-3 font-bold p-5 cursor-pointer">Start Creating</Button>
         </Link>
         </motion.div>
       </div>
