@@ -8,7 +8,9 @@ const page = () => {
              <p>Say hello to ImagiCrea the glow-up your ideas deserve! 🌈💥 Turn plain words into jaw-dropping visuals with our dope AI. Just drop a vibe, describe your scene, and BOOM magic happens. From dreamy aesthetics to crazy cool art, we've got you covered. Let’s flex your creativity and make some scroll-stopping content! 🚀🎨</p>
        </div>
        <div className='flex border border-purple-300 w-full gap-3 h-full'>
-          <div className="__form flex-[2] border border-blue-300"></div>
+          <div className="__form flex-[2] border border-blue-300 justify-start items-center flex-col">
+            <p>Drop your vibe and let the magic flow turn your words into stunning visuals!</p>
+          </div>
           <div className="__output flex-[1] border border-b-amber-400"></div>
        </div>
     </div>
