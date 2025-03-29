@@ -1,4 +1,3 @@
-"use client"
 import React, { ReactNode } from "react";
 
 const template = ({ children }: { children: ReactNode }) => {
