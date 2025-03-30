@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BiLoaderCircle } from "react-icons/bi";
 
@@ -29,7 +29,7 @@ export default function Header() {
         </div>
       ) : (
         <div className="flex gap-3 justify-center items-center">
-              <Button variant="destructive" className="cursor-pointer">Logout</Button>
+              <Button onClick={()=>signOut()} variant="outline" className="cursor-pointer">Logout</Button>
         <Avatar>
           <AvatarImage src={session.user?.image || ""} />
           <AvatarFallback>CN</AvatarFallback>
