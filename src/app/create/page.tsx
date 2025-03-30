@@ -1,8 +1,12 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
+import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
+  const [outputImg , setOutputImg] = useState<string|null>(null)
+  const [inputPrompt , setInputPrompt] = useState<string>("")
+  const [loading, setLoading] = useState<boolean>(false)
   return (
     <div className="w-full p-3 h-dvh flex  items-center justify-start pt-[72px] flex-col">
       <div className="w-full border border-red-500 p-3">
@@ -28,10 +32,10 @@ const page = () => {
           />
           <Button>Generate</Button>
         </div>
-        <div className="__output flex-[1] border border-b-amber-400"></div>
+        <div className="__output flex-[1] borders bg-white/7 rounded-lg"></div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
