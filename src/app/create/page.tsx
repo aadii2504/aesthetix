@@ -12,9 +12,12 @@ import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import Image from "next/image";
 
 const formSchema = z.object({
-  prompt: z.string().min(7, {message: "Prompt must  be atleast 7 characterrs long! try again :)"}),
+  prompt: z.string().min(7, {
+    message: "Prompt must  be atleast 7 characterrs long! try again :)",
+  }),
 });
 
 export default function Page() {
@@ -27,15 +30,25 @@ export default function Page() {
       prompt: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setLoading(true)
+      const response = await fetch("/api/image", {
+        method: "POST",
+        body: JSON.stringify(values),
+      });
+      const data = await response.json();
+      setOutputImg(data.url);
+    } catch (error) {
+      console.error(error);
+    } finally{
+      setLoading(false)
+    }
   }
 
   return (
     <div className="w-full p-3 h-dvh flex  items-center justify-start pt-[72px] flex-col">
-      <div className="w-full border border-red-500 p-3">
+      <div className="w-full p-3">
         <h1 className="text-center font-bold text-white text-3xl">Create</h1>
         <p>
           Say hello to ImagiCrea the glow-up your ideas deserve! 🌈💥 Turn plain
@@ -45,8 +58,8 @@ export default function Page() {
           make some scroll-stopping content! 🚀🎨
         </p>
       </div>
-      <div className="flex border border-purple-300 w-full gap-3 h-full">
-        <div className="__form flex-[2] gap-3 border border-blue-300 flex justify-center items-center flex-col">
+      <div className="flex w-full gap-3 h-full">
+        <div className="__form flex-[2] gap-3 flex justify-center items-center flex-col">
           <p className="text-left text-sm text-white/80">
             Drop your vibe and let the magic flow turn your words into stunning
             visuals!
@@ -73,12 +86,24 @@ export default function Page() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit">Generate</Button>
+                <Button loading={loading} type="submit" className="cursor-pointer">Generate</Button>
               </form>
             </Form>
           </div>
         </div>
-        <div className="__output flex-[1] borders bg-white/7 rounded-lg"></div>
+        <div className="__output flex-[1] borders bg-white/7 rounded-lg relative overflow-hidden">
+          {outputImg ? (
+            <Image
+              alt="output"
+              className="w-full h-full object-contain"
+              src={outputImg}
+              width={300}
+              height={300}
+            />
+          ) : <><div className="w-full h-full flex justify-center items-center text-white/70 text-center p-3">
+                Enter Your prompt and hit Generate 
+            </div></>}
+        </div>
       </div>
     </div>
   );
