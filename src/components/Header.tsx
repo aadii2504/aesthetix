@@ -17,7 +17,7 @@ export default function Header() {
     }
   }, [status, session]);
   return (
-    <div className="fixed top-0 w-full h-[60px] bg-black border-b border-white/60  p-3 flex justify-between items-center z-10">
+    <div className="fixed top-0 w-full h-[60px] bg-black border-b border-white/60  p-3 flex justify-between items-center z-50">
       <Link href="/">
         <h2 className="font-bold text-2xl">ImagiCrea</h2>
       </Link>
@@ -28,10 +28,13 @@ export default function Header() {
           <Button onClick={() => signIn("google")}>Login</Button>
         </div>
       ) : (
+        <div className="flex gap-3 justify-center items-center">
+              <Button variant="destructive" className="cursor-pointer">Logout</Button>
         <Avatar>
           <AvatarImage src={session.user?.image || ""} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
+        </div>
       )}
     </div>
   );
