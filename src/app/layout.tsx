@@ -22,24 +22,15 @@ export const metadata: Metadata = {
   title: "ImagiCrea",
   description:
     "ImagiCrea is your cutting-edge AI-powered image generation SaaS platform that brings creativity to life",
-  metadataBase: new URL("https://Aesthetix.com"),
   openGraph: {
     title: "ImagiCrea - Free AI Image Generation",
     description: "Turn your text into images with our free AI-powered tool",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ImagiCrea AI Image Generator",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ImagiCrea - Free AI Image Generation",
     description: "Turn your text into images with our free AI-powered tool",
-    images: ["/twitter-image.jpg"],
+    
   },
 };
 
