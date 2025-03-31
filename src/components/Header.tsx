@@ -7,6 +7,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BiLoaderCircle } from "react-icons/bi";
 
+
+
 export default function Header() {
   const [initialLoading, setInitialLoading] = useState<boolean>(true);
   const { data: session, status } = useSession();
