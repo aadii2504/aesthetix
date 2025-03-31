@@ -5,8 +5,7 @@ import React, { useEffect, useState } from 'react'
 export default function Page() {
     const [loading ,setLoading] = useState<boolean>(true)
 
-    useEffect(()=> {
-       const fetchPosts = async ()=> {
+    const fetchPosts = async ()=> {
         try {
             setLoading(true);
         const response =await fetch("/api/image")
@@ -18,11 +17,13 @@ export default function Page() {
             setLoading(false)
         }
        };
+
+    useEffect(()=> {
        fetchPosts();
     },[])
   return (
     <div className='w-full min-h-dvh border border-pink-400 flex justify-center items-center p-3 pt-[72px]'>
-     Page
+     {loading ? "loading" : "Page"}
     </div>
   )
 }
