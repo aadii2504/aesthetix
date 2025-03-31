@@ -26,7 +26,7 @@ export default function Page() {
     fetchPosts();
   }, []);
   return (
-    <div className="w-full min-h-dvh border border-pink-400 flex justify-center items-center p-3 pt-[72px]">
+    <div className="w-full min-h-dvh  p-3 pt-[72px] grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
       {loading ? (
         "loading"
       ) : (
