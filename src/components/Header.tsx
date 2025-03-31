@@ -7,8 +7,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BiLoaderCircle } from "react-icons/bi";
 
-
-
 export default function Header() {
   const [initialLoading, setInitialLoading] = useState<boolean>(true);
   const { data: session, status } = useSession();
@@ -31,11 +29,19 @@ export default function Header() {
         </div>
       ) : (
         <div className="flex gap-3 justify-center items-center">
-              <Button onClick={()=>signOut()} variant="outline" className="cursor-pointer">Logout</Button>
-        <Avatar>
-          <AvatarImage src={session.user?.image || ""} />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+          <Button
+            onClick={() => signOut()}
+            variant="outline"
+            className="cursor-pointer"
+          >
+            Logout
+          </Button>
+          <Link href={"/profile"}>
+          <Avatar>
+            <AvatarImage src={session.user?.image || ""} />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          </Link>
         </div>
       )}
     </div>

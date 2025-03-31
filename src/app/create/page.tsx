@@ -13,6 +13,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Image from "next/image";
+import { toast } from "sonner"
+
 
 const formSchema = z.object({
   prompt: z.string().min(7, {
@@ -23,6 +25,8 @@ const formSchema = z.object({
 export default function Page() {
   const [outputImg, setOutputImg] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+
+  
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -38,7 +42,14 @@ export default function Page() {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      setOutputImg(data.url);
+
+      if(response.status === 200) {
+        setOutputImg(data.url);
+      } else {
+        console.log(data.error);
+        toast(data.error)
+
+      }
     } catch (error) {
       console.error(error);
     } finally{
