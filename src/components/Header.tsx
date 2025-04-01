@@ -25,7 +25,7 @@ export default function Header() {
         <BiLoaderCircle className="animate-spin" />
       ) : !session ? (
         <div className="__menu">
-          <Button onClick={() => signIn("google")}>Login</Button>
+          <Button onClick={() => signIn("google")} className="cursor-pointer">Login</Button>
         </div>
       ) : (
         <div className="flex gap-3 justify-center items-center">
