@@ -65,7 +65,7 @@ export default function Page() {
           Say hello to ImagiCrea the glow-up your ideas deserve! 🌈💥 Turn plain
           words into jaw-dropping visuals with our dope AI. Just drop a vibe,
           describe your scene, and BOOM magic happens. From dreamy aesthetics to
-          crazy cool art, we've got you covered. Lets flex your creativity and
+          crazy cool art, we\'ve got you covered. Lets flex your creativity and
           make some scroll-stopping content! 🚀🎨
         </p>
       </div>
