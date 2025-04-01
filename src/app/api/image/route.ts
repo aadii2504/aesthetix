@@ -61,6 +61,9 @@ export async  function GET() {
     where: {
       userId: session.user.id,
     },
+    orderBy:{
+      createdAt: "desc"
+    }
   });
 
   return NextResponse.json(posts)

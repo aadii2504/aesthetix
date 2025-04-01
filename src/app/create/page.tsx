@@ -58,7 +58,7 @@ export default function Page() {
   }
 
   return (
-    <div className="w-full p-3 h-dvh flex  items-center justify-start pt-[72px] flex-col">
+    <div className="w-full p-3 min-h-dvh flex  items-center justify-start pt-[72px] flex-col">
       <div className="w-full p-3">
         <h1 className="text-center font-bold text-white text-3xl">Create</h1>
         <p>
@@ -69,9 +69,9 @@ export default function Page() {
           make some scroll-stopping content! 🚀🎨
         </p>
       </div>
-      <div className="flex w-full gap-3 h-full">
+      <div className="flex w-full gap-3 h-[calc(100dvh-200px)] md:flex-row flex-col">
         <div className="__form flex-[2] gap-3 flex justify-center items-center flex-col">
-          <p className="text-left text-sm text-white/80">
+          <p className="text-center text-sm text-white/80 w-full">
             Drop your vibe and let the magic flow turn your words into stunning
             visuals!
           </p>
@@ -85,7 +85,7 @@ export default function Page() {
                   control={form.control}
                   name="prompt"
                   render={({ field }) => (
-                    <FormItem className=" w-full items-center flex justify-center max-w-[70%]">
+                    <FormItem className=" w-full max-w-full items-center flex justify-center lg:max-w-[70%]">
                       <FormControl>
                         <Input
                           placeholder="Cat Sitting On A Sofa....."
@@ -102,7 +102,7 @@ export default function Page() {
             </Form>
           </div>
         </div>
-        <div className="__output flex-[1] borders bg-white/7 rounded-lg relative overflow-hidden">
+        <div className="__output min-h-[300px] lg:min-h-full lg:h-full flex-[1] borders bg-white/7 rounded-lg relative overflow-hidden">
           {outputImg ? (
             <Image
               alt="output"
